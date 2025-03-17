@@ -13,5 +13,5 @@ I’ve designed a **modern and dynamic portfolio** featuring:
 
 I’d love to hear your feedback! Connect with me and share your thoughts.  
 ![Contact Preview](https://github.com/user-attachments/assets/6cced2dc-dd94-4126-b71a-6e481c3091e6)  
-📩 **Contact Me:** [Your Email or Socials]  
-🔗 **Live Demo:** [Your Portfolio Link]  
+📩 **Contact Me:** khang18@usf.edu 
+🔗 **Live Demo:** https://tkphan.netlify.app/ 
