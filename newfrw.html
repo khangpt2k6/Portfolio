@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Layout styles */
+        section {
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Header styles */
+        header {
+            padding: 1rem;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+        }
+
+        /* Navigation styles */
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 1rem;
+        }
+
+        nav ul li {
+            margin-right: 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Hero section styles */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .hero h2 {
+            margin-bottom: 1rem;
+        }
+
+        .hero button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        /* About section styles */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Projects section styles */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .project-card {
+            border: 1px solid #eee;
+            padding: 1rem;
+        }
+
+        .project-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .technologies span {
+            background: #f0f0f0;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Skills section styles */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+
+        .skills-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .skills-list li {
+            margin-bottom: 0.2rem;
+        }
+
+        /* Contact section styles */
+        .contact-form {
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+        }
+
+        button[type="submit"] {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        /* Footer styles */
+        footer {
+            padding: 1rem;
+            text-align: center;
+            background: #f5f5f5;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            margin: 0 0.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1>Your Name</h1>
+            <p>Web Developer</p>
+        </div>
+    </header>
+
+    <nav id="navigation">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section id="hero" class="hero">
+            <h2>Welcome to My Portfolio</h2>
+            <p>I'm a passionate developer creating amazing web experiences</p>
+            <button id="cta-button">View My Work</button>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm a web developer with a passion for creating clean, functional websites. I specialize in HTML, CSS, and JavaScript.</p>
+                    <p>With X years of experience in the industry, I've worked on various projects ranging from small business websites to complex web applications.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/profile.jpg" alt="Profile Picture">
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid" id="project-container">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>My Skills</h2>
+            <div class="skills-container" id="skills-container">
+                <!-- Skills will be loaded dynamically -->
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p>Email: your.email@example.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="social-links">
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">Twitter</a>
+        </div>
+        <p>&copy; <span id="current-year"></span> Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Project data
+        const projects = [
+            {
+                id: 1,
+                title: "Project One",
+                description: "A brief description of the first project.",
+                image: "images/project1.jpg",
+                technologies: ["HTML", "CSS", "JavaScript"],
+                link: "#",
+                github: "#"
+            },
+            {
+                id: 2,
+                title: "Project Two",
+                description: "A brief description of the second project.",
+                image: "images/project2.jpg",
+                technologies: ["React", "Node.js", "MongoDB"],
+                link: "#",
+                github: "#"
+            },
+            {
+                id: 3,
+                title: "Project Three",
+                description: "A brief description of the third project.",
+                image: "images/project3.jpg",
+                technologies: ["Vue.js", "Express", "PostgreSQL"],
+                link: "#",
+                github: "#"
+            }
+        ];
+
+        // Skills data
+        const skills = [
+            {
+                category: "Frontend",
+                items: ["HTML5", "CSS3", "JavaScript", "React", "Vue.js", "Bootstrap"]
+            },
+            {
+                category: "Backend",
+                items: ["Node.js", "Express", "Python", "Django", "PHP"]
+            },
+            {
+                category: "Database",
+                items: ["MongoDB", "MySQL", "PostgreSQL", "Firebase"]
+            },
+            {
+                category: "Tools",
+                items: ["Git", "GitHub", "VS Code", "Webpack", "Docker"]
+            }
+        ];
+
+        // Initialize everything when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Initialize projects
+            initializeProjects();
+            
+            // Initialize skills
+            initializeSkills();
+            
+            // Initialize contact form
+            initializeContactForm();
+            
+            // Initialize CTA button
+            document.getElementById('cta-button').addEventListener('click', function() {
+                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Function to initialize projects
+        function initializeProjects() {
+            const projectContainer = document.getElementById('project-container');
+            
+            if (projectContainer) {
+                projectContainer.innerHTML = '';
+                
+                projects.forEach(project => {
+                    const projectElement = document.createElement('div');
+                    projectElement.className = 'project-card';
+                    
+                    projectElement.innerHTML = `
+                        <img src="${project.image}" alt="${project.title}">
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <div class="technologies">
+                            ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+                        </div>
+                        <div class="project-links">
+                            <a href="${project.link}" target="_blank">View Live</a>
+                            <a href="${project.github}" target="_blank">GitHub</a>
+                        </div>
+                    `;
+                    
+                    projectContainer.appendChild(projectElement);
+                });
+            }
+        }
+
+        // Function to initialize skills
+        function initializeSkills() {
+            const skillsContainer = document.getElementById('skills-container');
+            
+            if (skillsContainer) {
+                skillsContainer.innerHTML = '';
+                
+                skills.forEach(skillCategory => {
+                    const categoryElement = document.createElement('div');
+                    categoryElement.className = 'skill-category';
+                    
+                    categoryElement.innerHTML = `
+                        <h3>${skillCategory.category}</h3>
+                        <ul class="skills-list">
+                            ${skillCategory.items.map(skill => `<li>${skill}</li>`).join('')}
+                        </ul>
+                    `;
+                    
+                    skillsContainer.appendChild(categoryElement);
+                });
+            }
+        }
+
+        // Function to initialize contact form
+        function initializeContactForm() {
+            const contactForm = document.getElementById('contact-form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Get form data
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        message: document.getElementById('message').value
+                    };
+                    
+                    // In a real application, you would send this data to a server
+                    console.log('Form submitted with data:', formData);
+                    
+                    // Show success message
+                    alert('Thank you for your message! I will get back to you soon.');
+                    
+                    // Clear form
+                    contactForm.reset();
+                });
+            }
+        }
+    </script>
+</body>
+</html>
